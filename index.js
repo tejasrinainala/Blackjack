@@ -27,6 +27,7 @@ function getRandomCard() {
 
 function startGame() {
     isAlive = true
+    hasBlackjack=false
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
@@ -43,7 +44,8 @@ function renderGame() {
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
-    } else if (sum === 21) {message = "You've got Blackjack!"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
     hasBlackJack = true
 } else {
     message = "You're out of the game!"
@@ -61,3 +63,5 @@ if (isAlive === true && hasBlackJack === false) {
     renderGame()        
 }
 }
+document.getElementById("startgame-btn").addEventListener("click", startGame)
+document.getElementById("newcard-btn").addEventListener("click", newCard)
