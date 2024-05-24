@@ -63,5 +63,7 @@ if (isAlive === true && hasBlackJack === false) {
     renderGame()        
 }
 }
-document.getElementById("startgame-btn").addEventListener("click", startGame)
-document.getElementById("newcard-btn").addEventListener("click", newCard)
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("startgame-btn").addEventListener("click", startGame)
+    document.getElementById("newcard-btn").addEventListener("click", newCard)
+})
